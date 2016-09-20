@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Level 1 - Adding and Subtracting</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<script src="./js/1.js"></script>
+</head>
+<body onkeypress="checkAnswerIfEnter(event)">
+<h3><div id="instruction"></div></h3>
+<div id="question"></div>
+<input type="number" id="answer" oninput="checkEmpty()"><br>
+<button class="w3-btn w3-green w3-round-xxlarge" onclick="checkAnswer()" id="button">Check</button>
+<div id="result"></div>
+</body>
+</html>
