@@ -62,5 +62,6 @@ function checkAnswer() {
 		document.getElementById('answer').value = "";
 		document.getElementById('button').disabled = true;
 		document.getElementById('answer').disabled = false;
+		document.getElementById('answer').focus();
 	}
 }
