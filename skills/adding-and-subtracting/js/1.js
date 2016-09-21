@@ -18,6 +18,26 @@ function generateQuestion() {
 	}
 }
 
+function skipQuestion() {
+	if (!global.onresult) {
+		document.getElementById('result').innerHTML = "The correct answer was " + global.ans;
+		document.getElementById('skip').innerHTML = "Next";
+		document.getElementById('answer').disabled = true;
+		document.getElementById('button').style.display = 'none';
+		global.onresult = true;
+	} else {
+		generateQuestion();
+		document.getElementById('result').innerHTML = "";
+		document.getElementById('skip').innerHTML = "Skip";
+		document.getElementById('button').disabled = true;
+		document.getElementById('answer').disabled = false;
+		document.getElementById('button').style.display = 'initial';
+		document.getElementById('answer').focus();
+		document.getElementById('answer').value = "";
+		global.onresult = false;
+	}
+}
+
 function checkEmpty() {
 	if (document.getElementById('answer').value != "") {
 		document.getElementById('button').disabled = false;
@@ -53,6 +73,7 @@ function checkAnswer() {
 		}
 		document.getElementById('button').innerHTML = "Next";
 		document.getElementById('answer').disabled = true;
+		document.getElementById('skip').style.display = 'none';
 		global.onresult = true;
 	} else {
 		generateQuestion();
@@ -63,5 +84,6 @@ function checkAnswer() {
 		document.getElementById('button').disabled = true;
 		document.getElementById('answer').disabled = false;
 		document.getElementById('answer').focus();
+		document.getElementById('skip').style.display = 'initial';
 	}
 }
